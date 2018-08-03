@@ -1,0 +1,19 @@
+.jumbotron {
+    background-size: cover;
+}
+.container {
+    text-align: center;
+    margin: auto;
+}
+.codeupLogo {
+    position: absolute;
+}
+.nav {
+    text-align: center;
+}
+.container {
+    background-color: lightgray;
+    width: 100%;
+    margin: 0 autp;
+    height: 1000px;
+}
