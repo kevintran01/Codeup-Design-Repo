@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: ;
+    background: #ccc;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul > li {
+    padding: 15px;
+}
+
+.rounded-circle {
+    list-style-type: none;
+    width: 200px;
+    height: 200px;
+    align-text: center;
+    border: 6px solid white;
+}
+.icon {
+    list-style-type: none;
+    width: 18px;
+    height: 18px;
+    border: 6px solid white;
+}
+
+ul.list-inline {
+    text-align: center;
+}
+
+.circle1 {
+    background-color: #e6563b;
+}
+
+.circle2 {
+    background-color: #eb9d3a;
+}
+
+.circle3 {
+    background-color: #7cb06c;
+}
+
+.circle4 {
+    background-color: #00aba9;
+}
