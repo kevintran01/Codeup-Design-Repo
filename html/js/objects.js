@@ -1,20 +1,20 @@
 (function () {
     "use strict";
 
-     /**
-      * TODO:
-      * Create an object with firstName and lastName properties that are strings
-      * with your first and last name. Store this object in a variable named
-      * `person`.
-      *
-      * Example:
-      *  > console.log(person.firstName) // "Rick"
-      *  > console.log(person.lastName) // "Sanchez"
-      */
+    /**
+     * TODO:
+     * Create an object with firstName and lastName properties that are strings
+     * with your first and last name. Store this object in a variable named
+     * `person`.
+     *
+     * Example:
+     *  > console.log(person.firstName) // "Rick"
+     *  > console.log(person.lastName) // "Sanchez"
+     */
     var person = {};
     var sayHello = ("Hello from ");
-        person.firstName = "Rick";
-        person.lastName = "Sanchez";
+    person.firstName = "Rick";
+    person.lastName = "Sanchez";
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -25,7 +25,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.logFirstNameLastName = function () {
-        console.log(sayHello + this.firstName + " "+this.lastName + "!");
+        console.log(sayHello + this.firstName + " " + this.lastName + "!");
     };
     person.logFirstNameLastName();
     /** TODO:
@@ -83,7 +83,16 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [];
+    books.push({title: "No Excuses", author: {firstname: "Brian", lastName: "Tracy"}});
+    books.push({title: "Crazy Rich Asians", author: {firstname: "Kevin", lastName: "Kwan"}});
+    books.push({title: "Medieval Punishments", author: {firstname: "William", lastName: "Andrews"}});
+    books.push({title: "Origin", author: {firstname: "Dan", lastName: "Brown"}});
+    books.push({title: "The Giver", author: {firstname: "Lois", lastName: "Lowry"}});
 
+    books.forEach(function (book) {
+        console.log(book.title);
+    })
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -108,25 +117,17 @@
      *      ---
      *      ...
      */
-    var books = [
-        {
-            title: "The Salmon of Doubt",
-            owner: {
-                auther: "Douglas Adams",
-            }
-        },
 
-        {   title: "Walkaway",
-            owner: {
-                author: "Cory Doctorow",
-            }
-        },
-        {   title
+    var bookListing = function (book, bookNum) {
+        console.log("Book # " + bookNum);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName)
+    }
 
-    book2.title = "The Salmon of Doubt";
-    book2.auther = "Cory Doctorow";
-    book3.title = "TA brief history of time";
-    book3.auther = "Stephen Halkin";
+    books.forEach(function (book, id) {
+        bookListing(book, id + 1);
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -138,4 +139,21 @@
      *   `showBookInfo` function.
      */
 
-})();
+    var createBook = function (title, author) {
+        var book = {};
+        book.title = title;
+        if (typeof author === "string") {
+            var names = author.split(" ");
+            var authObj = {
+                firstName: names[0],
+                lastName: names[1]
+            }
+        }
+        else if (typeof author === "object") {
+            book.author = author;
+        }
+
+        return book;
+    }
+
+    console.log(createBook("The Salmon of Doubt", {firstName: "Douglas", lastName: "Adams"}));
